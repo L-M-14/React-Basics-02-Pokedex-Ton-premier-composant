@@ -1,3 +1,4 @@
+// src/App.tsx
 import React from 'react';
 import PokemonCard from './components/PokemonCard';
 
@@ -11,7 +12,7 @@ const pokemonList = [
   },
 ];
 
-const App = () => {
+const App: React.FC = () => {
   return (
     <div>
       <PokemonCard pokemon={pokemonList[0]} />
