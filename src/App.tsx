@@ -11,7 +11,7 @@ const pokemonList = [
   },
 ];
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <div>
       <PokemonCard pokemon={pokemonList[0]} />

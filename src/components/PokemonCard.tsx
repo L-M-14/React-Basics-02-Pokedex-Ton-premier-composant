@@ -1,11 +1,6 @@
 import React from 'react';
 
-interface Pokemon {
-    name: string;
-    imgSrc?: string;
-}
-
-const PokemonCard: React.FC<{ pokemon: Pokemon }> = ({ pokemon }) => {
+const PokemonCard = ({ pokemon }) => {
     return (
         <figure>
             {pokemon.imgSrc ? (
