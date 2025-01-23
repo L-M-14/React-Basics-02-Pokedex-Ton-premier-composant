@@ -1,4 +1,3 @@
-// src/App.tsx
 import React from 'react';
 import PokemonCard from './components/PokemonCard';
 
@@ -15,7 +14,7 @@ const pokemonList = [
 const App: React.FC = () => {
   return (
     <div>
-      <PokemonCard pokemon={pokemonList[0]} />
+      <PokemonCard pokemon={pokemonList[1]} /> {/* Passe le deuxième Pokémon du tableau */}
     </div>
   );
 };
