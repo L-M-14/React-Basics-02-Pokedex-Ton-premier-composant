@@ -5,7 +5,11 @@ interface Pokemon {
     imgSrc?: string;
 }
 
-const PokemonCard: React.FC<{ pokemon: Pokemon }> = ({ pokemon }) => {
+interface PokemonCardProps {
+    pokemon: Pokemon;
+}
+
+const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon }) => {
     return (
         <figure>
             {pokemon.imgSrc ? (
