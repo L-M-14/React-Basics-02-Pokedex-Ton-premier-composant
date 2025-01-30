@@ -13,11 +13,26 @@ interface NavBarProps {
 
 const NavBar: React.FC<NavBarProps> = ({ setPokemonIndex, pokemonList, pokemonIndex }) => {
   const handlePrevious = () => {
-    setPokemonIndex((pokemonIndex - 1 + pokemonList.length) % pokemonList.length);
+   const pikachuAlert = ((pokemonIndex - 1 + pokemonList.length) % pokemonList.length);
+    setPokemonIndex(pikachuAlert);
+    if (pokemonList[pikachuAlert].name === "pikachu") {
+      alert("pika pikachu !!!");
+    }
   };
 
   const handleNext = () => {
-    setPokemonIndex((pokemonIndex + 1) % pokemonList.length);
+    const pikachuAlert = ((pokemonIndex + 1) % pokemonList.length);
+    setPokemonIndex(pikachuAlert);
+    if (pokemonList[pikachuAlert].name === "pikachu") {
+      alert("pika pikachu !!!");
+    }
+  };
+
+  const PokemonSelect = (index: number) => {
+    setPokemonIndex(index);
+    if (pokemonList[index].name === "pikachu") {
+      alert("pika pikachu !!!");
+    }
   };
 
   return (
@@ -29,7 +44,7 @@ const NavBar: React.FC<NavBarProps> = ({ setPokemonIndex, pokemonList, pokemonIn
         <button
           key={pokemon.name}
           type="button"
-          onClick={() => setPokemonIndex(index)}
+          onClick={() =>PokemonSelect(index)}
           aria-label={`Select ${pokemon.name}`}
         >
           {pokemon.name}
