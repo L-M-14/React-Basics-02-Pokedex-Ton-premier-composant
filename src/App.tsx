@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import PokemonCard from './components/PokemonCard';
+import NavBar from './components/NavBar'; // Importez le nouveau composant NavBar
 
 const pokemonList = [
   {
@@ -26,19 +27,9 @@ const pokemonList = [
 const App: React.FC = () => {
   const [pokemonIndex, setPokemonIndex] = useState(0);
 
-  const handlePokemonClick = (index: number) => {
-    setPokemonIndex(index);
-  };
-
   return (
     <div>
-      <nav>
-        {pokemonList.map((pokemon, index) => (
-          <button key={pokemon.name} onClick={() => handlePokemonClick(index)}>
-            {pokemon.name}
-          </button>
-        ))}
-      </nav>
+      <NavBar setPokemonIndex={setPokemonIndex} pokemonList={pokemonList} pokemonIndex={pokemonIndex} />
       <PokemonCard pokemon={pokemonList[pokemonIndex]} />
     </div>
   );
